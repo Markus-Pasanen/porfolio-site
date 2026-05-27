@@ -4,30 +4,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Markus Pasanen - Software Engineer</title>
+    <title>Markus Pasanen — Software Engineer & COMOS Specialist</title>
     <link rel="icon" href="favicon.ico" type="image/x-icon">
 
-    <!-- SEO: description, canonical, robots -->
-    <meta name="description" content="Full‑stack developer & COMOS specialist. I build engineering tooling, web apps and CI/CD workflows.">
+    <!-- SEO -->
+    <meta name="description" content="Full‑stack developer & COMOS specialist with deep SIEMENS COMOS expertise. I build engineering tooling, web apps and CI/CD workflows for industrial companies.">
     <link rel="canonical" href="https://pasanen.dev/">
     <meta name="robots" content="index,follow">
 
     <!-- Open Graph -->
     <meta property="og:site_name" content="Markus Pasanen">
-    <meta property="og:title" content="Markus Pasanen — Software Engineer">
+    <meta property="og:title" content="Markus Pasanen — Software Engineer & COMOS Specialist">
     <meta property="og:description" content="Full‑stack developer & COMOS specialist. I build engineering tooling, web apps and CI/CD workflows.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://pasanen.dev/">
     <meta property="og:image" content="https://pasanen.dev/images/portfolio.png">
-    <meta property="og:image:alt" content="Markus Pasanen — portfolio screenshot">
+    <meta property="og:image:alt" content="Markus Pasanen — portfolio">
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Markus Pasanen — Software Engineer">
+    <meta name="twitter:title" content="Markus Pasanen — Software Engineer & COMOS Specialist">
     <meta name="twitter:description" content="Full‑stack developer & COMOS specialist. I build engineering tooling, web apps and CI/CD workflows.">
     <meta name="twitter:image" content="https://pasanen.dev/images/portfolio.png">
 
-    <!-- Structured data (JSON-LD) -->
+    <!-- Structured data -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -38,167 +38,466 @@
         "https://github.com/Markus-Pasanen",
         "https://www.linkedin.com/in/markus-pasanen-2a6b16161/"
       ],
-      "email": "mailto:markus.petteri.pasanen@gmail.com"
+      "email": "mailto:markus.petteri.pasanen@gmail.com",
+      "jobTitle": "Software Engineer, PLM Comos Team",
+      "worksFor": {
+        "@type": "Organization",
+        "name": "ANDRITZ"
+      }
     }
     </script>
 
-    <!-- Styling -->
+    <!-- Fonts & Icons -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <header>
+    <!-- Particle canvas background -->
+    <canvas id="particle-canvas"></canvas>
+
+    <!-- Custom cursor glow -->
+    <div class="cursor-glow" id="cursor-glow"></div>
+
+    <!-- Header -->
+    <header id="header">
         <div class="container header-container">
-            <a href="#" class="logo">Markus Pasanen</a>
+            <a href="#" class="logo">
+                <span class="logo-bracket">{</span>MP<span class="logo-bracket">}</span>
+            </a>
             <nav class="desktop-nav">
                 <ul>
                     <li><a href="#about">About</a></li>
+                    <li><a href="#experience">Experience</a></li>
+                    <li><a href="#education">Education</a></li>
                     <li><a href="#projects">Projects</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
             </nav>
-            <button id="burger-menu" class="burger-menu">
-                <i class="fa-solid fa-bars"></i>
+            <button id="burger-menu" class="burger-menu" aria-label="Toggle menu" aria-expanded="false">
+                <span class="burger-line"></span>
+                <span class="burger-line"></span>
+                <span class="burger-line"></span>
             </button>
-            <nav class="mobile-nav" id="mobile-nav">
-                <ul>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#projects">Projects</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </nav>
         </div>
     </header>
 
-    <section class="hero">
+    <!-- Mobile nav overlay -->
+    <div id="mobile-menu-overlay" class="mobile-nav">
+        <div class="mobile-nav-top">
+            <div class="mobile-nav-links">
+                <a href="#about" class="mobile-menu-link">About</a>
+                <a href="#experience" class="mobile-menu-link">Experience</a>
+                <a href="#education" class="mobile-menu-link">Education</a>
+                <a href="#projects" class="mobile-menu-link">Projects</a>
+                <a href="#contact" class="mobile-menu-link btn btn-primary">Get in touch</a>
+            </div>
+        </div>
+        <div class="mobile-nav-bottom">
+            <div class="mobile-nav-social">
+                <a href="https://github.com/Markus-Pasanen" target="_blank" aria-label="GitHub">
+                    <i class="fa-brands fa-github"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/markus-pasanen-2a6b16161/" target="_blank" aria-label="LinkedIn">
+                    <i class="fa-brands fa-linkedin"></i>
+                </a>
+                <a href="mailto:markus.petteri.pasanen@gmail.com" aria-label="Email">
+                    <i class="fa-solid fa-envelope"></i>
+                </a>
+            </div>
+            <span class="mobile-nav-copyright">&copy; <span id="mobile-current-year">2025</span> Markus Pasanen</span>
+        </div>
+    </div>
+
+    <!-- Hero -->
+    <section class="hero" id="hero">
+        <div class="hero-overlay"></div>
+        <div class="container hero-container">
+
+            <h1 class="hero-title">
+                <span class="hero-greeting">Hi, I'm</span>
+                <span class="hero-name">Markus Pasanen</span>
+            </h1>
+            <div class="hero-typing">
+                <span class="typing-prefix">I'm a </span>
+                <span class="typing-text" id="typing-text"></span>
+                <span class="typing-cursor">|</span>
+            </div>
+            <p class="hero-description">
+                Full‑stack developer &amp; COMOS specialist with deep SIEMENS COMOS expertise.
+                I create engineering tooling, web applications, and CI/CD workflows that
+                bridge industrial engineering with modern technology.
+            </p>
+            <div class="hero-cta">
+                <a href="mailto:markus.petteri.pasanen@gmail.com" class="btn btn-primary">
+                    <i class="fa-solid fa-envelope"></i> Get in touch
+                </a>
+                <a href="#experience" class="btn btn-glass">
+                    <i class="fa-solid fa-arrow-down"></i> View my work
+                </a>
+            </div>
+            <div class="hero-stats">
+                <div class="stat-item">
+                    <span class="stat-number" data-count="6">0</span>
+                    <span class="stat-label">Years Experience</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number" data-count="15">0</span>
+                    <span class="stat-label">Projects</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number" data-count="3">0</span>
+                    <span class="stat-label">Companies</span>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- About -->
+    <section id="about">
         <div class="container">
-            <div class="hero-content">
-                <h1>Hi, I'm Markus Pasanen</h1>
-                <p>Software Engineer & COMOS Specialist</p>
-                <a href="mailto:markus.petteri.pasanen@gmail.com" class="btn">Contact me</a>
+            <div class="section-header">
+                <span class="section-tag">About</span>
+                <h2 class="section-title">The engineer behind the code</h2>
+            </div>
+            <div class="about-grid">
+                <div class="about-card glass-card reveal">
+                    <div class="about-icon">
+                        <i class="fa-solid fa-code"></i>
+                    </div>
+                    <h3>Full‑Stack Development</h3>
+                    <p>Building end‑to‑end solutions from industrial COMOS tooling to modern React & Next.js applications. I turn complex engineering requirements into intuitive, performant software.</p>
+                </div>
+                <div class="about-card glass-card reveal">
+                    <div class="about-icon">
+                        <i class="fa-solid fa-industry"></i>
+                    </div>
+                    <h3>SIEMENS COMOS Expert</h3>
+                    <p>Deep expertise in COMOS administration, DLL‑plugin development, project migration tooling, and cDB‑to‑iDB migration. Highly skilled in VBScript and COMOS internal libraries at a deep level — supporting the engineering process from start to document delivery.</p>
+                </div>
+                <div class="about-card glass-card reveal">
+                    <div class="about-icon">
+                        <i class="fa-solid fa-robot"></i>
+                    </div>
+                    <h3>AI & Automation</h3>
+                    <p>Integrating AI with industrial systems using PyTorch &amp; Diffusers. Automating everything with GitHub Actions — CI/CD pipelines that deploy in seconds, not hours.</p>
+                </div>
+                <div class="about-card glass-card reveal">
+                    <div class="about-icon">
+                        <i class="fa-solid fa-gears"></i>
+                    </div>
+                    <h3>DevOps & CI/CD</h3>
+                    <p>Docker, Git, GitHub Actions. I design workflows that eliminate manual steps — letting engineers focus on building, not deploying.</p>
+                </div>
             </div>
         </div>
     </section>
 
-    <section id="about">
+    <!-- Experience Timeline -->
+    <section id="experience">
         <div class="container">
-            <h2 class="section-title">About Me</h2>
-            <div class="about-content">
-                <div class="about-text">
-                    <p>I'm a professional full-stack developer and COMOS specialist with deep expertise in SIEMENS COMOS
-                        administration and supporting process engineering workflows. With 5+ years of experience, I create solutions
-                        that bridge industrial engineering with modern web technologies, specializing in engineering
-                        tooling, web development, AI integration, and CI/CD pipelines.</p>
-                    <p>My work focuses on developing usable systems that combine industrial engineering data with modern
-                        user experience. I also love automating development workflows using GitHub Actions.
-                    </p>
+            <div class="section-header">
+                <span class="section-tag">Career</span>
+                <h2 class="section-title">Where I've made an impact</h2>
+            </div>
+            <div class="timeline">
+                <!-- ANDRITZ -->
+                <div class="timeline-item reveal">
+                    <div class="timeline-marker">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-line"></div>
+                    </div>
+                    <div class="timeline-card glass-card">
+                        <div class="timeline-badge current">Current</div>
+                        <div class="timeline-header">
+                            <div class="timeline-company">
+                                <img src="https://logo.clearbit.com/andritz.com" alt="ANDRITZ" class="company-logo" onerror="this.style.display='none'">
+                                <div>
+                                    <h3>ANDRITZ</h3>
+                                    <span class="timeline-type">Full‑time</span>
+                                </div>
+                            </div>
+                            <span class="timeline-date">Feb 2024 — Present · 2 yrs 4 mos</span>
+                        </div>
+                        <h4 class="timeline-role">Software Engineer, PLM Comos Team</h4>
+                        <p class="timeline-location"><i class="fa-solid fa-location-dot"></i> Varkaus sub‑region, North Savo, Finland</p>
+                        <p class="timeline-desc">Working in the PLM Comos Team inside IT, developing and maintaining COMOS engineering solutions for ANDRITZ's pulp &amp; paper and metals processing plants. Building DLL plugins, migration tooling, and deeply customizing COMOS with VBScript and internal libraries.</p>
+                        <div class="timeline-tech">
+                            <span>COMOS</span><span>VBScript</span><span>C#</span><span>.DLL-development</span>
+                        </div>
+                    </div>
                 </div>
-                <div class="skills-section">
-                    <h3>My Skills</h3>
-                    <div class="skills">
-                        <span class="skill">COMOS</span>
-                        <span class="skill">VBScript</span>
-                        <span class="skill">Python</span>
-                        <span class="skill">HTML</span>
-                        <span class="skill">Javascript</span>
-                        <span class="skill">Typescript</span>
-                        <span class="skill">React</span>
-                        <span class="skill">Node.js</span>
-                        <span class="skill">Pytorch</span>
-                        <span class="skill">Diffusers</span>
-                        <span class="skill">Github Actions</span>
-                        <span class="skill">TailwindCSS</span>
-                        <span class="skill">NextJS</span>
-                        <span class="skill">Docker</span>
-                        <span class="skill">GIT</span>
-                        <span class="skill">C#</span>
-                        <span class="skill">EF Core</span>
+
+                <!-- Gambit - System Developer -->
+                <div class="timeline-item reveal">
+                    <div class="timeline-marker">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-line"></div>
+                    </div>
+                    <div class="timeline-card glass-card">
+                        <div class="timeline-header">
+                            <div class="timeline-company">
+                                <img src="https://logo.clearbit.com/gambit.fi" alt="Gambit" class="company-logo" onerror="this.style.display='none'">
+                                <div>
+                                    <h3>Gambit</h3>
+                                    <span class="timeline-subtitle">Subcontractor at ANDRITZ</span>
+                                    <span class="timeline-type">Full‑time · 4 yrs 2 mos</span>
+                                </div>
+                            </div>
+                            <span class="timeline-date">Jan 2021 — Feb 2024 · 3 yrs 2 mos</span>
+                        </div>
+                        <h4 class="timeline-role">System Developer</h4>
+                        <p class="timeline-location"><i class="fa-solid fa-location-dot"></i> Varkaus, North Savo, Finland</p>
+                        <p class="timeline-desc">Worked as a subcontractor in ANDRITZ on the Engineering Tools team inside the pulp and paper business area. Full‑stack development with TypeScript, Agile methodologies. Built and maintained industrial software solutions and worked deeply inside COMOS — helping engineers succeed with migrations and delivering scalable systems using modern web technologies.</p>
+                        <div class="timeline-tech">
+                            <span>TypeScript</span><span>COMOS</span><span>React</span><span>Node.js</span><span>Python</span><span>Docker</span><span>Git</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Gambit - Junior Developer -->
+                <div class="timeline-item reveal">
+                    <div class="timeline-marker">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-line"></div>
+                    </div>
+                    <div class="timeline-card glass-card">
+                        <div class="timeline-header">
+                            <div class="timeline-company">
+                                <div>
+                                    <h3>Gambit</h3>
+                                    <span class="timeline-subtitle">Subcontractor at ANDRITZ</span>
+                                </div>
+                            </div>
+                            <span class="timeline-date">Jan 2020 — Jan 2021 · 1 yr 1 mo</span>
+                        </div>
+                        <h4 class="timeline-role">Junior Developer</h4>
+                        <p class="timeline-location"><i class="fa-solid fa-location-dot"></i> Varkaus, North Savo, Finland</p>
+                        <p class="timeline-desc">Started learning COMOS and building features and tooling for the iDB database. Gained foundational full‑stack development skills and version control practices while working on industrial software at ANDRITZ as a subcontractor.</p>
+                        <div class="timeline-tech">
+                            <span>COMOS</span><span>VBScript</span><span>C#</span><span>Full‑Stack</span><span>Git</span><span>HTML</span><span>CSS</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Education -->
+    <section id="education">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Education</span>
+                <h2 class="section-title">Academic background</h2>
+            </div>
+            <div class="education-grid">
+                <div class="education-card glass-card reveal">
+                    <div class="education-icon">
+                        <i class="fa-solid fa-graduation-cap"></i>
+                    </div>
+                    <div class="education-degree">Master of Science (MS) — Ongoing</div>
+                    <div class="education-field">Computer Science — IoT Specialization</div>
+                    <div class="education-school">University of Jyväskylä (JYU) — Faculty of Information Technology</div>
+                    <div class="education-date">Aug 2023 — Present</div>
+                    <p class="education-desc">The English‑taught Master's Degree Programme in Computer Science (120 ECTS) with a specialized module in IoT (Internet of Things). Advanced studies in wireless sensor networks, embedded programming, cloud‑integrated IoT architectures, CI/CD pipelines, and agile application development.</p>
+                    <div class="education-tags">
+                        <span>IoT</span><span>Wireless Sensor Networks</span><span>Cloud</span><span>CI/CD</span><span>Agile</span><span>Embedded</span>
+                    </div>
+                </div>
+                <div class="education-card glass-card reveal">
+                    <div class="education-icon">
+                        <i class="fa-solid fa-school"></i>
+                    </div>
+                    <div class="education-degree">Bachelor of Business Administration (BBA)</div>
+                    <div class="education-field">Information Technology</div>
+                    <div class="education-school">Xamk — South‑Eastern Finland University of Applied Sciences</div>
+                    <div class="education-date">2018 — Dec 2022</div>
+                    <p class="education-desc">Comprehensive education in front‑end and full‑stack development, agile methodologies, and modern web technologies. Built real‑world projects and developed industry‑ready software engineering skills.</p>
+                    <div class="education-tags">
+                        <span>Front‑End</span><span>Agile</span><span>Full‑Stack</span><span>Web Development</span><span>Mobile</span>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- Skills -->
+    <section id="skills">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Toolkit</span>
+                <h2 class="section-title">Technologies I work with</h2>
+            </div>
+            <div class="skills-categories">
+                <div class="skill-category glass-card reveal">
+                    <h3 class="skill-cat-title">
+                        <i class="fa-solid fa-microchip"></i> COMOS Development
+                    </h3>
+                    <div class="skill-chips">
+                        <span class="skill-chip">COMOS</span>
+                        <span class="skill-chip">VBScript</span>
+                        <span class="skill-chip">C#</span>
+                        <span class="skill-chip">.DLL-development</span>
+                        <span class="skill-chip">Windows Server</span>
+                    </div>
+                </div>
+                <div class="skill-category glass-card reveal">
+                    <h3 class="skill-cat-title">
+                        <i class="fa-solid fa-globe"></i> Frontend
+                    </h3>
+                    <div class="skill-chips">
+                        <span class="skill-chip">HTML</span>
+                        <span class="skill-chip">CSS</span>
+                        <span class="skill-chip">JavaScript</span>
+                        <span class="skill-chip">TypeScript</span>
+                        <span class="skill-chip">React</span>
+                        <span class="skill-chip">NextJS</span>
+                        <span class="skill-chip">TailwindCSS</span>
+                    </div>
+                </div>
+                <div class="skill-category glass-card reveal">
+                    <h3 class="skill-cat-title">
+                        <i class="fa-solid fa-server"></i> Backend & DevOps
+                    </h3>
+                    <div class="skill-chips">
+                        <span class="skill-chip">Node.js</span>
+                        <span class="skill-chip">Python</span>
+                        <span class="skill-chip">Docker</span>
+                        <span class="skill-chip">Git</span>
+                        <span class="skill-chip">GitHub Actions</span>
+                        <span class="skill-chip">CI/CD</span>
+                    </div>
+                </div>
+                <div class="skill-category glass-card reveal">
+                    <h3 class="skill-cat-title">
+                        <i class="fa-solid fa-brain"></i> AI & Data
+                    </h3>
+                    <div class="skill-chips">
+                        <span class="skill-chip">PyTorch</span>
+                        <span class="skill-chip">Diffusers</span>
+                        <span class="skill-chip">OpenCode</span>
+                        <span class="skill-chip">MCP Servers</span>
+                        <span class="skill-chip">RAG</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects -->
     <section id="projects">
         <div class="container">
-            <h2 class="section-title">Featured Projects</h2>
+            <div class="section-header">
+                <span class="section-tag">Work</span>
+                <h2 class="section-title">Featured projects</h2>
+            </div>
             <div class="projects-grid">
-                <div class="project-card">
-                    <div class="project-img" style="background-image: url('images/pinja.png')">
+                <!-- Project 1 -->
+                <article class="project-card glass-card reveal">
+                    <div class="project-img-wrap">
+                        <div class="project-img" style="background-image: url('images/pinja.png')"></div>
+                        <div class="project-img-overlay">
+                            <a href="https://jalkaterapiapinja.fi/" target="_blank" class="btn btn-sm btn-primary">
+                                <i class="fa-solid fa-arrow-up-right-from-square"></i> Live
+                            </a>
+                        </div>
                     </div>
                     <div class="project-content">
                         <h3 class="project-title">Jalkaterapia Pinja</h3>
-                        <p class="project-description">Simple podiatric website displaying pricing and contact data for
-                            appointment. Automated deployment with Github Actions.
-                        </p>
+                        <p class="project-description">Modern podiatric clinic website with pricing, contact information, and automated GitHub Actions deployment pipeline.</p>
                         <div class="project-tech">
-                            <span class="tech">NextJS</span>
-                            <span class="tech">TailwindCSS</span>
-                            <span class="tech">Github Actions</span>
-                            <span class="tech">Typescript</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="https://jalkaterapiapinja.fi/" target="_blank" class="btn btn-outline">View
-                                Live</a>
+                            <span>NextJS</span><span>TailwindCSS</span><span>TypeScript</span><span>GitHub Actions</span>
                         </div>
                     </div>
-                </div>
-                <div class="project-card">
-                    <div class="project-img" style="background-image: url('images/portfolio.png')">
+                </article>
+
+                <!-- Project 2 -->
+                <article class="project-card glass-card reveal">
+                    <div class="project-img-wrap">
+                        <div class="project-img" style="background-image: url('images/puukkopaja.png')"></div>
+                        <div class="project-img-overlay">
+                            <a href="https://pienipuukkopaja.fi/" target="_blank" class="btn btn-sm btn-primary">
+                                <i class="fa-solid fa-arrow-up-right-from-square"></i> Live
+                            </a>
+                        </div>
                     </div>
                     <div class="project-content">
-                        <h3 class="project-title">My Portfolio</h3>
-                        <p class="project-description">Sometimes simplicity is the key to a successful project. Just a
-                            simple HTML page with Jekyll magic and instant deployment with Github Actions.</p>
+                        <h3 class="project-title">Pienipuukkopaja.fi</h3>
+                        <p class="project-description">Single‑page site for a Finnish knife artisan located in Varkaus. Hosted on GitHub Pages automated via GitHub Actions.</p>
                         <div class="project-tech">
-                            <span class="tech">HTML</span>
-                            <span class="tech">CSS</span>
-                            <span class="tech">Javascript</span>
-                            <span class="tech">Jekyll</span>
-                            <span class="tech">Github Actions</span>
-                            <span class="tech">Github Pages</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="https://github.com/Markus-Pasanen/pages-test" target="_blank"
-                                class="btn btn-outline">View Code</a>
+                            <span>HTML</span><span>Tailwind CSS</span><span>JavaScript</span><span>GitHub Actions</span><span>GitHub Pages</span>
                         </div>
                     </div>
-                </div>
-                <div class="project-card">
-                    <div class="project-img" style="background-image: url('images/comos.png')">
+                </article>
+
+                <!-- Project 3 -->
+                <article class="project-card glass-card reveal">
+                    <div class="project-img-wrap">
+                        <div class="project-img" style="background-image: url('images/comos.png')"></div>
+                        <div class="project-img-overlay">
+                            <span class="project-img-label">Enterprise</span>
+                        </div>
                     </div>
                     <div class="project-content">
                         <h3 class="project-title">COMOS iDB Migration</h3>
-                        <p class="project-description">Worked on migrating engineering data from cDB database to iDB.
-                            Modernizing the data model and improving engineering workflows.</p>
+                        <p class="project-description">Large‑scale migration of engineering data from cDB to iDB database, modernizing the data model and improving engineering workflows.</p>
                         <div class="project-tech">
-                            <span class="tech">COMOS</span>
-                            <span class="tech">VBScript</span>
-                            <span class="tech">C#</span>
+                            <span>COMOS</span><span>VBScript</span><span>C#</span>
                         </div>
                     </div>
-                </div>
+                </article>
             </div>
-            <div style="text-align: center; margin-top: 50px;">
-                <a href="https://github.com/Markus-Pasanen" target="_blank" class="btn">View more projects on github</a>
+            <div class="projects-cta">
+                <a href="https://github.com/Markus-Pasanen" target="_blank" class="btn btn-glass btn-lg">
+                    <i class="fa-brands fa-github"></i> View more on GitHub
+                </a>
             </div>
         </div>
     </section>
 
+    <!-- Contact / Footer -->
     <footer id="contact">
         <div class="container">
-            <h3>Connect with me on</h3>
-            <div class="social-links">
-                <a href="https://github.com/Markus-Pasanen" target="_blank" class="social-link"><i
-                        class="fab fa-github"></i></a>
-                <a href="https://www.linkedin.com/in/markus-pasanen-2a6b16161/" target="_blank" class="social-link"><i
-                        class="fab fa-linkedin"></i></a>
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="#" class="logo footer-logo">
+                        <span class="logo-bracket">{</span>MP<span class="logo-bracket">}</span>
+                    </a>
+                    <p>Software Engineer &amp; COMOS Specialist — building the bridge between industrial engineering and modern web technology.</p>
+                </div>
+                <div class="footer-nav">
+                    <h4>Navigation</h4>
+                    <ul>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#experience">Experience</a></li>
+                        <li><a href="#education">Education</a></li>
+                        <li><a href="#projects">Projects</a></li>
+                    </ul>
+                </div>
+                <div class="footer-connect">
+                    <h4>Connect</h4>
+                    <div class="footer-social">
+                        <a href="https://github.com/Markus-Pasanen" target="_blank" class="social-icon" aria-label="GitHub">
+                            <i class="fa-brands fa-github"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/in/markus-pasanen-2a6b16161/" target="_blank" class="social-icon" aria-label="LinkedIn">
+                            <i class="fa-brands fa-linkedin"></i>
+                        </a>
+                        <a href="mailto:markus.petteri.pasanen@gmail.com" class="social-icon" aria-label="Email">
+                            <i class="fa-solid fa-envelope"></i>
+                        </a>
+                    </div>
+                </div>
             </div>
-            <p class="copyright">© 2025 Markus Pasanen. All rights reserved.</p>
+            <div class="footer-bottom">
+                <p>&copy; <span id="current-year">2025</span> Markus Pasanen. All rights reserved.</p>
+                <p class="footer-location"><i class="fa-solid fa-location-dot"></i> Varkaus, Finland</p>
+            </div>
         </div>
     </footer>
 
