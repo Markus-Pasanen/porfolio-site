@@ -525,6 +525,7 @@ header.scrolled {
 /* CTA buttons */
 .hero-cta {
     display: flex;
+    justify-content: flex-start;
     gap: 16px;
     flex-wrap: wrap;
     margin-bottom: 60px;
