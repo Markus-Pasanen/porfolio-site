@@ -5,47 +5,212 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Markus Pasanen — Software Engineer & COMOS Specialist</title>
-    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="manifest" href="/site.webmanifest">
 
     <!-- SEO -->
     <meta name="description" content="Full‑stack developer & COMOS specialist with deep SIEMENS COMOS expertise. I build engineering tooling, web apps and CI/CD workflows for industrial companies.">
+    <meta name="keywords" content="software engineer, COMOS specialist, SIEMENS COMOS, full-stack developer, PLM, iDB, cDB, C#, VBScript, React, TypeScript, DevOps, CI/CD, Docker, GitHub Actions, AI, agentic engineering, Varkaus, Finland">
+    <meta name="author" content="Markus Pasanen">
     <link rel="canonical" href="https://pasanen.dev/">
     <meta name="robots" content="index,follow">
+    <meta name="theme-color" content="#0a0a1a">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="application-name" content="Markus Pasanen Portfolio">
 
     <!-- Open Graph -->
     <meta property="og:site_name" content="Markus Pasanen">
     <meta property="og:title" content="Markus Pasanen — Software Engineer & COMOS Specialist">
     <meta property="og:description" content="Full‑stack developer & COMOS specialist. I build engineering tooling, web apps and CI/CD workflows.">
-    <meta property="og:type" content="website">
+    <meta property="og:type" content="profile">
     <meta property="og:url" content="https://pasanen.dev/">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:determiner" content="the">
     <meta property="og:image" content="https://pasanen.dev/images/social-media.jpg">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
+    <meta property="og:image:type" content="image/jpeg">
     <meta property="og:image:alt" content="Markus Pasanen — Software Engineer & COMOS Specialist">
+    <meta property="profile:first_name" content="Markus">
+    <meta property="profile:last_name" content="Pasanen">
+    <meta property="profile:username" content="Markus-Pasanen">
 
-    <!-- Twitter -->
+    <!-- Twitter / X Card -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Markus Pasanen — Software Engineer & COMOS Specialist">
     <meta name="twitter:description" content="Full‑stack developer & COMOS specialist. I build engineering tooling, web apps and CI/CD workflows.">
     <meta name="twitter:image" content="https://pasanen.dev/images/social-media.jpg">
+    <meta name="twitter:image:alt" content="Markus Pasanen — Software Engineer & COMOS Specialist">
+
+    <!-- Apple Web App -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Markus Pasanen">
+
+    <!-- Microsoft Tiles -->
+    <meta name="msapplication-TileColor" content="#0a0a1a">
+
+    <!-- Preconnect -->
+    <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+    <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+    <link rel="dns-prefetch" href="https://logo.clearbit.com">
 
     <!-- Structured data -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "Person",
-      "name": "Markus Pasanen",
-      "url": "https://pasanen.dev/",
-      "sameAs": [
-        "https://github.com/Markus-Pasanen",
-        "https://www.linkedin.com/in/markus-pasanen-2a6b16161/"
-      ],
-      "email": "mailto:markus.petteri.pasanen@gmail.com",
-      "jobTitle": "Software Engineer, PLM Comos Team",
-      "worksFor": {
-        "@type": "Organization",
-        "name": "ANDRITZ"
-      }
+      "@graph": [
+        {
+          "@type": "WebSite",
+          "@id": "https://pasanen.dev/#website",
+          "url": "https://pasanen.dev/",
+          "name": "Markus Pasanen — Software Engineer & COMOS Specialist",
+          "description": "Full‑stack developer & COMOS specialist. I build engineering tooling, web apps and CI/CD workflows.",
+          "inLanguage": "en",
+          "publisher": {
+            "@id": "https://pasanen.dev/#person"
+          }
+        },
+        {
+          "@type": "ProfilePage",
+          "@id": "https://pasanen.dev/#webpage",
+          "url": "https://pasanen.dev/",
+          "name": "Markus Pasanen — Portfolio",
+          "description": "Full‑stack developer & COMOS specialist with deep SIEMENS COMOS expertise.",
+          "inLanguage": "en",
+          "isPartOf": {
+            "@id": "https://pasanen.dev/#website"
+          },
+          "about": {
+            "@id": "https://pasanen.dev/#person"
+          },
+          "primaryImageOfPage": {
+            "@type": "ImageObject",
+            "url": "https://pasanen.dev/images/social-media.jpg",
+            "width": 1200,
+            "height": 630
+          },
+          "breadcrumb": {
+            "@id": "https://pasanen.dev/#breadcrumb"
+          }
+        },
+        {
+          "@type": "BreadcrumbList",
+          "@id": "https://pasanen.dev/#breadcrumb",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Home",
+              "item": "https://pasanen.dev/"
+            }
+          ]
+        },
+        {
+          "@type": "Person",
+          "@id": "https://pasanen.dev/#person",
+          "name": "Markus Pasanen",
+          "givenName": "Markus",
+          "familyName": "Pasanen",
+          "alternateName": "Markus Petteri Pasanen",
+          "url": "https://pasanen.dev/",
+          "image": "https://pasanen.dev/images/social-media.jpg",
+          "description": "Full‑stack developer & COMOS specialist with deep SIEMENS COMOS expertise. I build engineering tooling, web apps and CI/CD workflows for industrial companies.",
+          "email": "mailto:markus.petteri.pasanen@gmail.com",
+          "telephone": "+358",
+          "jobTitle": "Software Engineer, PLM Comos Team",
+          "gender": "Male",
+          "nationality": "Finland",
+          "knowsLanguage": ["en", "fi"],
+          "knowsAbout": [
+            "SIEMENS COMOS",
+            "Full‑Stack Development",
+            "DevOps",
+            "CI/CD",
+            "Artificial Intelligence",
+            "Agentic Engineering",
+            "PLM",
+            "React",
+            "TypeScript",
+            "Python",
+            "Docker",
+            "GitHub Actions",
+            "Ansible",
+            "C#",
+            "VBScript",
+            "Node.js",
+            "IoT"
+          ],
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Varkaus",
+            "addressRegion": "North Savo",
+            "addressCountry": "FI"
+          },
+          "alumniOf": [
+            {
+              "@type": "CollegeOrUniversity",
+              "name": "University of Jyväskylä (JYU)",
+              "sameAs": "https://www.jyu.fi/en"
+            },
+            {
+              "@type": "CollegeOrUniversity",
+              "name": "Xamk — South‑Eastern Finland University of Applied Sciences",
+              "sameAs": "https://www.xamk.fi/en"
+            }
+          ],
+          "worksFor": {
+            "@type": "Organization",
+            "name": "ANDRITZ",
+            "sameAs": "https://www.andritz.com/",
+            "description": "International technology group providing plants, systems, equipment and services for various industries."
+          },
+          "hasOccupation": [
+            {
+              "@type": "Occupation",
+              "name": "Software Engineer",
+              "occupationLocation": {
+                "@type": "City",
+                "name": "Varkaus"
+              }
+            },
+            {
+              "@type": "Occupation",
+              "name": "COMOS Specialist",
+              "occupationLocation": {
+                "@type": "City",
+                "name": "Varkaus"
+              }
+            }
+          ],
+          "hasCredential": [
+            {
+              "@type": "EducationalOccupationalCredential",
+              "credentialCategory": "Master of Science (MS)",
+              "about": "Computer Science — IoT Specialization",
+              "educationalLevel": "Graduate"
+            },
+            {
+              "@type": "EducationalOccupationalCredential",
+              "credentialCategory": "Bachelor of Business Administration (BBA)",
+              "about": "Information Technology",
+              "educationalLevel": "Undergraduate"
+            }
+          ],
+          "sameAs": [
+            "https://github.com/Markus-Pasanen",
+            "https://www.linkedin.com/in/markus-pasanen-2a6b16161/"
+          ],
+          "mainEntityOfPage": {
+            "@id": "https://pasanen.dev/#webpage"
+          }
+        }
+      ]
     }
     </script>
 

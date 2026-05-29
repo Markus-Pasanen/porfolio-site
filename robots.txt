@@ -1,2 +1,6 @@
+# Markus Pasanen — Portfolio
+# Robots configuration for https://pasanen.dev/
+
 User-agent: *
+Allow: /
 Sitemap: https://pasanen.dev/sitemap.xml
