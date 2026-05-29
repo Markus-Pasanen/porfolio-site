@@ -1,5 +1,2 @@
 User-agent: *
-Allow: /
-
-# Point crawlers to the sitemap
 Sitemap: https://pasanen.dev/sitemap.xml

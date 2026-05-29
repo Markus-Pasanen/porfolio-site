@@ -422,6 +422,8 @@ header.scrolled {
     display: flex;
     justify-content: flex-end;
     align-items: center;
+    height: 100%;
+    width: 100%;
 }
 
 .hero-trust {
@@ -618,7 +620,7 @@ header.scrolled {
 /* Hero image card */
 .hero-image-frame {
     position: relative;
-    width: 100%;
+    scale: 140%;
     max-width: 320px;
     aspect-ratio: 1;
     border-radius: var(--radius-lg);
